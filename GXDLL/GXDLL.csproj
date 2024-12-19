@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{21EF5C70-14AD-44FE-83A7-AEBF7743541D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GXDLL</RootNamespace>
+    <AssemblyName>GXDLL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Gurux.Common, Version=8.1.1907.301, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gurux.Common.8.1.1907.301\lib\net45\Gurux.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Gurux.DLMS, Version=9.0.1911.901, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gurux.DLMS.9.0.1911.901\lib\net45\Gurux.DLMS.dll</HintPath>
+    </Reference>
+    <Reference Include="Gurux.Net, Version=8.1.1909.601, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gurux.Net.8.1.1909.601\lib\net45\Gurux.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Gurux.Serial, Version=8.1.1910.3102, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Gurux.Serial.8.1.1910.3102\lib\net45\Gurux.Serial.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConnectionControl.cs" />
+    <Compile Include="ConnectionSettings.cs" />
+    <Compile Include="CryptoStuff.cs" />
+    <Compile Include="DlmsSettings.cs" />
+    <Compile Include="Function.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="GXDLMSReader.cs" />
+    <Compile Include="InitializeMedia.cs" />
+    <Compile Include="MediaSettings.cs" />
+    <Compile Include="ObisList.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Record.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
